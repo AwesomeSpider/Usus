@@ -1,0 +1,102 @@
+---- Minecraft Crash Report ----
+// I blame Dinnerbone.
+
+Time: 7/10/15 3:06 PM
+Description: Ticking player
+
+java.lang.NullPointerException: Ticking player
+	at awesomespider.usus.Items.RedstoneCrystalBattery.getEnergyStored(RedstoneCrystalBattery.java:75)
+	at awesomespider.usus.Items.RedstoneCrystalBattery.getDamage(RedstoneCrystalBattery.java:85)
+	at net.minecraft.item.ItemStack.getItemDamage(ItemStack.java:265)
+	at net.minecraft.entity.player.InventoryPlayer.addItemStackToInventory(InventoryPlayer.java:448)
+	at net.minecraft.entity.item.EntityItem.onCollideWithPlayer(EntityItem.java:393)
+	at net.minecraft.entity.player.EntityPlayer.collideWithPlayer(EntityPlayer.java:681)
+	at net.minecraft.entity.player.EntityPlayer.onLivingUpdate(EntityPlayer.java:672)
+	at net.minecraft.entity.EntityLivingBase.onUpdate(EntityLivingBase.java:1816)
+	at net.minecraft.entity.player.EntityPlayer.onUpdate(EntityPlayer.java:327)
+	at net.minecraft.entity.player.EntityPlayerMP.onUpdateEntity(EntityPlayerMP.java:330)
+	at net.minecraft.network.NetHandlerPlayServer.processPlayer(NetHandlerPlayServer.java:329)
+	at net.minecraft.network.play.client.C03PacketPlayer.processPacket(C03PacketPlayer.java:37)
+	at net.minecraft.network.play.client.C03PacketPlayer.processPacket(C03PacketPlayer.java:111)
+	at net.minecraft.network.NetworkManager.processReceivedPackets(NetworkManager.java:241)
+	at net.minecraft.network.NetworkSystem.networkTick(NetworkSystem.java:182)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:726)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:614)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:118)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:485)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:752)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at awesomespider.usus.Items.RedstoneCrystalBattery.getEnergyStored(RedstoneCrystalBattery.java:75)
+	at awesomespider.usus.Items.RedstoneCrystalBattery.getDamage(RedstoneCrystalBattery.java:85)
+	at net.minecraft.item.ItemStack.getItemDamage(ItemStack.java:265)
+	at net.minecraft.entity.player.InventoryPlayer.addItemStackToInventory(InventoryPlayer.java:448)
+	at net.minecraft.entity.item.EntityItem.onCollideWithPlayer(EntityItem.java:393)
+	at net.minecraft.entity.player.EntityPlayer.collideWithPlayer(EntityPlayer.java:681)
+	at net.minecraft.entity.player.EntityPlayer.onLivingUpdate(EntityPlayer.java:672)
+	at net.minecraft.entity.EntityLivingBase.onUpdate(EntityLivingBase.java:1816)
+	at net.minecraft.entity.player.EntityPlayer.onUpdate(EntityPlayer.java:327)
+
+-- Player being ticked --
+Details:
+	Entity Type: null (net.minecraft.entity.player.EntityPlayerMP)
+	Entity ID: 46
+	Entity Name: Player346
+	Entity's Exact location: -984.08, 4.00, 733.58
+	Entity's Block location: World: (-985,4,733), Chunk: (at 7,0,13 in -62,45; contains blocks -992,0,720 to -977,255,735), Region: (-2,1; contains chunks -64,32 to -33,63, blocks -1024,0,512 to -513,255,1023)
+	Entity's Momentum: 0.00, -0.08, 0.00
+Stacktrace:
+	at net.minecraft.entity.player.EntityPlayerMP.onUpdateEntity(EntityPlayerMP.java:330)
+	at net.minecraft.network.NetHandlerPlayServer.processPlayer(NetHandlerPlayServer.java:329)
+	at net.minecraft.network.play.client.C03PacketPlayer.processPacket(C03PacketPlayer.java:37)
+	at net.minecraft.network.play.client.C03PacketPlayer.processPacket(C03PacketPlayer.java:111)
+	at net.minecraft.network.NetworkManager.processReceivedPackets(NetworkManager.java:241)
+
+-- Ticking connection --
+Details:
+	Connection: net.minecraft.network.NetworkManager@342ee5ff
+Stacktrace:
+	at net.minecraft.network.NetworkSystem.networkTick(NetworkSystem.java:182)
+	at net.minecraft.server.MinecraftServer.updateTimeLightAndEntities(MinecraftServer.java:726)
+	at net.minecraft.server.MinecraftServer.tick(MinecraftServer.java:614)
+	at net.minecraft.server.integrated.IntegratedServer.tick(IntegratedServer.java:118)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:485)
+	at net.minecraft.server.MinecraftServer$2.run(MinecraftServer.java:752)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 7 (amd64) version 6.1
+	Java Version: 1.7.0_07, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 846652608 bytes (807 MB) / 1038876672 bytes (990 MB) up to 1038876672 bytes (990 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP v9.05 FML v7.10.99.99 Minecraft Forge 10.13.4.1448 10 mods loaded, 10 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{7.10.99.99} [Forge Mod Loader] (forgeSrc-1.7.10-10.13.4.1448-1.7.10.jar) 
+	UCHIJAAAA	Forge{10.13.4.1448} [Minecraft Forge] (forgeSrc-1.7.10-10.13.4.1448-1.7.10.jar) 
+	UCHIJAAAA	CodeChickenCore{1.0.4.29} [CodeChicken Core] (minecraft.jar) 
+	UCHIJAAAA	<CoFH ASM>{000} [CoFH ASM] (minecraft.jar) 
+	UCHIJAAAA	CoFHCore{1.7.10R3.0.3B2} [CoFH Core] (CoFHCore-[1.7.10]3.0.3B2-294.jar) 
+	UCHIJAAAA	usus{0.0.1} [Usus] (Usus) 
+	UCHIJAAAA	ThermalFoundation{1.7.10R1.2.0B1} [Thermal Foundation] (ThermalFoundation-[1.7.10]1.2.0B1-95.jar) 
+	UCHIJAAAA	ThermalDynamics{1.7.10R1.1.0B2} [Thermal Dynamics] (ThermalDynamics-[1.7.10]1.1.0B2-149.jar) 
+	UCHIJAAAA	ThermalExpansion{1.7.10R4.0.2B2} [Thermal Expansion] (ThermalExpansion-[1.7.10]4.0.2B2-210.jar) 
+	GL info: ~~ERROR~~ RuntimeException: No OpenGL context found in the current thread.
+	CoFHCore: -[1.7.10]3.0.3B2-294
+	ThermalFoundation: -[1.7.10]1.2.0B1-95
+	ThermalDynamics: -[1.7.10]1.1.0B2-149
+	ThermalExpansion: -[1.7.10]4.0.2B2-210
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Player Count: 1 / 8; [EntityPlayerMP['Player346'/46, l='Thermal Test World', x=-984.08, y=4.00, z=733.58]]
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fml,forge'

@@ -1,0 +1,16 @@
+[
+{
+  "modid": "usus",
+  "name": "Usus",
+  "description": "Ever played with a tech mod and generated so much power you don't know what to do with it all? Usus is the answer. It aims to add more ways to use excess power.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Awesome_Spider"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

@@ -1,0 +1,9 @@
+log.preinit.text=Initializing...
+log.preinit.items.text=Initializing 0%: Items
+log.init.text=Registering...
+log.init.items.text=Registering 0%: Items
+log.postinit.text=Performing other tasks...
+log.postinit.items.text=Performing other tasks 0%: Recipes
+log.finished.text=All tasks completed without imploding!
+item.redstoneCrystalBattery.name=Redstone Crystal Battery
+tile.steamEngine.name=Steam Engine

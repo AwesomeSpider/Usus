@@ -1,0 +1,117 @@
+---- Minecraft Crash Report ----
+// Everything's going to plan. No, really, that was supposed to happen.
+
+Time: 7/4/15 3:54 PM
+Description: Ticking block entity
+
+java.lang.NullPointerException: Ticking block entity
+	at awesomespider.usus.TileEntities.TileEntitySteamEngine.getStackInSlot(TileEntitySteamEngine.java:262)
+	at awesomespider.usus.TileEntities.TileEntitySteamEngine.updateEntity(TileEntitySteamEngine.java:94)
+	at net.minecraft.world.World.updateEntities(World.java:2160)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:2097)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1039)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:962)
+	at net.minecraft.client.main.Main.main(Main.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source)
+	at GradleStart.main(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at awesomespider.usus.TileEntities.TileEntitySteamEngine.getStackInSlot(TileEntitySteamEngine.java:262)
+	at awesomespider.usus.TileEntities.TileEntitySteamEngine.updateEntity(TileEntitySteamEngine.java:94)
+
+-- Block entity being ticked --
+Details:
+	Name: null // awesomespider.usus.TileEntities.TileEntitySteamEngine
+	Block type: ID #165 (tile.steamEngine // awesomespider.usus.Blocks.BlockSteamEngine)
+	Block data value: 0 / 0x0 / 0b0000
+	Block location: World: (69,27,968), Chunk: (at 5,1,8 in 4,60; contains blocks 64,0,960 to 79,255,975), Region: (0,1; contains chunks 0,32 to 31,63, blocks 0,0,512 to 511,255,1023)
+	Actual block type: ID #165 (tile.steamEngine // awesomespider.usus.Blocks.BlockSteamEngine)
+	Actual block data value: 0 / 0x0 / 0b0000
+Stacktrace:
+	at net.minecraft.world.World.updateEntities(World.java:2160)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityClientPlayerMP['Player987'/4, l='MpServer', x=66.50, y=28.62, z=969.50]]
+	Chunk stats: MultiplayerChunkCache: 624, 624
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (76,4,970), Chunk: (at 12,0,10 in 4,60; contains blocks 64,0,960 to 79,255,975), Region: (0,1; contains chunks 0,32 to 31,63, blocks 0,0,512 to 511,255,1023)
+	Level time: 874 game time, 874 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 36 total; [EntitySlime['Slime'/11294, l='MpServer', x=53.04, y=27.35, z=1048.23], EntitySlime['Slime'/132322, l='MpServer', x=66.15, y=27.60, z=1024.24], EntitySlime['Slime'/51599, l='MpServer', x=137.99, y=27.69, z=943.43], EntityCow['Cow'/67592, l='MpServer', x=90.03, y=27.00, z=1046.09], EntitySlime['Slime'/12992, l='MpServer', x=58.44, y=27.00, z=974.31], EntitySlime['Slime'/70909, l='MpServer', x=9.79, y=27.60, z=934.31], EntityChicken['Chicken'/67599, l='MpServer', x=100.47, y=27.00, z=1040.56], EntitySlime['Slime'/47693, l='MpServer', x=140.44, y=27.00, z=990.63], EntitySlime['Slime'/3415, l='MpServer', x=-7.00, y=27.00, z=940.55], EntitySlime['Slime'/75363, l='MpServer', x=64.96, y=27.00, z=1035.25], EntitySlime['Slime'/94524, l='MpServer', x=32.41, y=27.00, z=1017.03], EntitySlime['Slime'/41966, l='MpServer', x=-1.85, y=27.95, z=922.56], EntityClientPlayerMP['Player987'/4, l='MpServer', x=66.50, y=28.62, z=969.50], EntitySlime['Slime'/144425, l='MpServer', x=147.10, y=27.00, z=975.10], EntitySlime['Slime'/75356, l='MpServer', x=54.03, y=27.00, z=1025.03], EntitySlime['Slime'/109339, l='MpServer', x=136.85, y=27.39, z=981.63], EntitySlime['Slime'/127537, l='MpServer', x=147.53, y=27.00, z=1012.13], EntitySlime['Slime'/86949, l='MpServer', x=143.57, y=27.62, z=1040.47], EntitySlime['Slime'/130396, l='MpServer', x=65.63, y=27.00, z=1015.26], EntitySlime['Slime'/143894, l='MpServer', x=33.68, y=27.96, z=1002.89], EntitySlime['Slime'/30625, l='MpServer', x=88.91, y=27.00, z=899.74], EntitySheep['Sheep'/67638, l='MpServer', x=-10.50, y=27.00, z=899.50], EntitySheep['Sheep'/67639, l='MpServer', x=-13.22, y=27.00, z=891.03], EntitySheep['Sheep'/67636, l='MpServer', x=-6.22, y=27.00, z=900.50], EntitySlime['Slime'/17464, l='MpServer', x=144.02, y=27.00, z=911.97], EntitySheep['Sheep'/67637, l='MpServer', x=-14.06, y=27.00, z=892.22], EntityChicken['Chicken'/67642, l='MpServer', x=-12.50, y=27.00, z=898.50], EntityChicken['Chicken'/67641, l='MpServer', x=-13.50, y=27.00, z=900.50], EntitySlime['Slime'/20382, l='MpServer', x=81.84, y=27.83, z=904.08], EntityPig['Pig'/67646, l='MpServer', x=-6.50, y=27.00, z=905.50], EntityPig['Pig'/67647, l='MpServer', x=-9.50, y=27.00, z=905.50], EntitySlime['Slime'/131523, l='MpServer', x=128.56, y=27.00, z=1008.15], EntitySlime['Slime'/127586, l='MpServer', x=95.63, y=27.00, z=1029.43], EntityPig['Pig'/67644, l='MpServer', x=-7.50, y=27.00, z=902.50], EntitySlime['Slime'/20381, l='MpServer', x=100.58, y=27.99, z=900.39], EntityPig['Pig'/67645, l='MpServer', x=-3.50, y=27.00, z=906.50]]
+	Retry entities: 0 total; []
+	Server brand: fml,forge
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:415)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2566)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:984)
+	at net.minecraft.client.main.Main.main(Main.java:164)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at net.minecraftforge.gradle.GradleStartCommon.launch(Unknown Source)
+	at GradleStart.main(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 7 (amd64) version 6.1
+	Java Version: 1.7.0_07, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 835812880 bytes (797 MB) / 1038876672 bytes (990 MB) up to 1038876672 bytes (990 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP v9.05 FML v7.10.99.99 Minecraft Forge 10.13.4.1448 4 mods loaded, 4 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHIJAAAA	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHIJAAAA	FML{7.10.99.99} [Forge Mod Loader] (forgeSrc-1.7.10-10.13.4.1448-1.7.10.jar) 
+	UCHIJAAAA	Forge{10.13.4.1448} [Minecraft Forge] (forgeSrc-1.7.10-10.13.4.1448-1.7.10.jar) 
+	UCHIJAAAA	usus{0.0.1} [Usus] (Usus) 
+	GL info: ' Vendor: 'ATI Technologies Inc.' Version: '4.0.9896 Compatibility Profile Context' Renderer: 'ATI Radeon HD 5450'
+	Launched Version: 1.7.10
+	LWJGL: 2.9.1
+	OpenGL: ATI Radeon HD 5450 GL version 4.0.9896 Compatibility Profile Context, ATI Technologies Inc.
+	GL Caps: Using GL 1.3 multitexturing.
+Using framebuffer objects because OpenGL 3.0 is supported and separate blending is supported.
+Anisotropic filtering is supported and maximum anisotropy is 16.
+Shaders are available because OpenGL 2.1 is supported.
+
+	Is Modded: Definitely; Client brand changed to 'fml,forge'
+	Type: Client (map_client.txt)
+	Resource Packs: []
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Anisotropic Filtering: Off (1)
