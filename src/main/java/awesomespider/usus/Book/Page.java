@@ -9,7 +9,8 @@ public abstract class Page {
     private String[] lines;
     private String imageTextureName;
 
-    public Page (String title, String[] lines, String imageTextureName){
+    public Page (String id, String title, String[] lines, String imageTextureName){
+        setId(id);
         setTitle(title);
         setLines(lines);
         setImageTextureName(imageTextureName);

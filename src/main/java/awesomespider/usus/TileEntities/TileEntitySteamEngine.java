@@ -250,7 +250,7 @@ public class TileEntitySteamEngine extends TileEntity implements IEnergyProvider
 
         NBTTagList listOfItems = new NBTTagList();
 
-        for (int i = 0; i < slots.length; i++){
+        for (int i = 0; i < slots.length; i++) {
             if (slots[i] != null) {
                 NBTTagCompound slotNbt = new NBTTagCompound();
                 slotNbt.setByte("Slot", (byte) i);
@@ -271,13 +271,13 @@ public class TileEntitySteamEngine extends TileEntity implements IEnergyProvider
 
         nbt.setInteger("RF", energyStorage.getEnergyStored());
 
-        if (facing.equals(ForgeDirection.NORTH)){
+        if (facing.equals(ForgeDirection.NORTH)) {
             nbt.setInteger("Facing", 3);
-        } else if (facing.equals(ForgeDirection.SOUTH)){
+        } else if (facing.equals(ForgeDirection.SOUTH)) {
             nbt.setInteger("Facing", 4);
-        } else if (facing.equals(ForgeDirection.WEST)){
+        } else if (facing.equals(ForgeDirection.WEST)) {
             nbt.setInteger("Facing", 5);
-        } else if (facing.equals(ForgeDirection.EAST)){
+        } else if (facing.equals(ForgeDirection.EAST)) {
             nbt.setInteger("Facing", 6);
         }
     }
@@ -321,14 +321,14 @@ public class TileEntitySteamEngine extends TileEntity implements IEnergyProvider
         if (this.slots[slot] != null) {
             ItemStack itemstack;
 
-            if (this.slots[slot].stackSize <= slot) {
+            if (this.slots[slot].stackSize <= amount) {
                 itemstack = this.slots[slot];
                 this.slots[slot] = null;
                 this.markDirty();
                 return itemstack;
             }
             else {
-                itemstack = this.slots[slot].splitStack(slot);
+                itemstack = this.slots[slot].splitStack(amount);
 
                 if (this.slots[slot].stackSize == 0)
                 {

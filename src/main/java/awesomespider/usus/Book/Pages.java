@@ -1,5 +1,7 @@
 package awesomespider.usus.Book;
 
+import cpw.mods.fml.common.gameevent.TickEvent;
+
 import java.util.List;
 
 /**
@@ -8,19 +10,21 @@ import java.util.List;
 public class Pages {
     public static List<Page> pages;
 
-    private void addPage(){
-
+    private void addPage(String id, String title, String[] lines, String imageTextureName){
+        pages.add(new Page(id, title, lines, imageTextureName) {});
     }
 
     public static void registerPages(){
-
+        
     }
 
-    private Page getPage(){
-        return null; //Work on the book
-    }
+    public static Page getPageById(String id){
+        for (Page page : pages){
+            if (page.getId().equals(id)){
+                return page;
+            }
+        }
 
-    public static Page getPageById(){
         return null;
     }
 }
