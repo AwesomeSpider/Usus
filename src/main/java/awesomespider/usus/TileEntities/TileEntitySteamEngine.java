@@ -236,7 +236,7 @@ public class TileEntitySteamEngine extends TileEntity implements IEnergyProvider
         waterMb = nbt.getInteger("WaterMb");
         progress = nbt.getInteger("BurnProgress");
         burningCountdown = nbt.getInteger("BurningTimer");
-        currentBurningFuel = ItemStack.loadItemStackFromNBT(nbt.getCompoundTag("CurrentBurningFuel")); //TODO Confirm that this works.
+        if (nbt.getCompoundTag("CurrentBurningFuel") != null) currentBurningFuel = ItemStack.loadItemStackFromNBT(nbt.getCompoundTag("CurrentBurningFuel")); //TODO Confirm that this works.
         rfToGenerate = nbt.getInteger("RfToGenerate");
 
         energyStorage.receiveEnergy(nbt.getInteger("RF"), false);
@@ -250,7 +250,7 @@ public class TileEntitySteamEngine extends TileEntity implements IEnergyProvider
 
         NBTTagList listOfItems = new NBTTagList();
 
-        for (int i = 0; i < slots.length; i++) {
+        for (int i = 0; i < slots.length; i++){
             if (slots[i] != null) {
                 NBTTagCompound slotNbt = new NBTTagCompound();
                 slotNbt.setByte("Slot", (byte) i);
@@ -264,20 +264,22 @@ public class TileEntitySteamEngine extends TileEntity implements IEnergyProvider
         nbt.setInteger("WaterMb", waterMb);
         nbt.setInteger("BurnProgress", progress);
         nbt.setInteger("BurningTimer", burningCountdown);
-        NBTTagCompound currentBurningFuelTag = new NBTTagCompound();
-        currentBurningFuel.writeToNBT(currentBurningFuelTag);
-        nbt.setTag("CurrentBurningFuel", currentBurningFuelTag);
+        if (currentBurningFuel != null) {
+            NBTTagCompound currentBurningFuelTag = new NBTTagCompound();
+            currentBurningFuel.writeToNBT(currentBurningFuelTag);
+            nbt.setTag("CurrentBurningFuel", currentBurningFuelTag);
+        }
         nbt.setInteger("RfToGenerate", rfToGenerate);
 
         nbt.setInteger("RF", energyStorage.getEnergyStored());
 
-        if (facing.equals(ForgeDirection.NORTH)) {
+        if (facing.equals(ForgeDirection.NORTH)){
             nbt.setInteger("Facing", 3);
-        } else if (facing.equals(ForgeDirection.SOUTH)) {
+        } else if (facing.equals(ForgeDirection.SOUTH)){
             nbt.setInteger("Facing", 4);
-        } else if (facing.equals(ForgeDirection.WEST)) {
+        } else if (facing.equals(ForgeDirection.WEST)){
             nbt.setInteger("Facing", 5);
-        } else if (facing.equals(ForgeDirection.EAST)) {
+        } else if (facing.equals(ForgeDirection.EAST)){
             nbt.setInteger("Facing", 6);
         }
     }
